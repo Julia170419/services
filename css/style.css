@@ -194,6 +194,8 @@ p {
     letter-spacing: 0.2px;
 }
 .info__btn-read {
+    text-decoration: none;
+    color: rgba(27, 28, 33, 1);
     font-size: 16px;
     display: flex;
     align-items: center;

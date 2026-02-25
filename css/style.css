@@ -157,6 +157,7 @@ h1 {
 .menu__link--active {
     border: 2px solid rgba(184, 255, 236, 1);
     border-radius: 6px;
+    background-color: rgba(255, 255, 255, 1);
 }
 .right-blackout {
     pointer-events: none;
@@ -214,6 +215,7 @@ p {
     margin-left: -16px;
     min-width: 320px;
     min-height: 176px;
+    border-radius: 0%;
 }
 
 @media(min-width: 769px) {

@@ -15,12 +15,18 @@ html, body {
     box-sizing: border-box;
     align-items: start;
     width: 320px;
-    min-height: 100%;
+    overflow-y: auto;
+    max-height: 100vh;
     border-bottom: none;
     position: fixed;
     z-index: 20;
     background-color: white;
     box-shadow: 5px 0 40px 20px rgb(219 220 229);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.header--open::-webkit-scrollbar {
+    display: none;
 }
 .header-top {
     padding: 19px 16px;
@@ -45,9 +51,6 @@ html, body {
     height: 40px;
     border-radius: 50%;
     background-color: rgba(255, 62, 121, 1);
-}
-.burger--open {
-    padding: 9px;
 }
 .burger__line:first-child {
     content: "";
@@ -74,20 +77,13 @@ html, body {
     border-radius: 1px;
     background-color: rgba(255, 255, 255, 1);
 }
-.burger--open__line:nth-child(1) {
-    width: 22px;
-    transform-origin: center;
-    transform: translateY(2px) rotate(-135deg);
-}
-.burger--open__line:nth-child(2) {
+.burger--none {
     display: none;
 }
-.burger--open__line:nth-child(3) {
-    width: 22px;
-    transform-origin: center;
-    transform: rotate(-45deg);
+.burger svg {
+    transition: all .3s;
 }
-.burger:hover, .btn:hover {
+.burger:hover, .burger svg:hover, .btn:hover {
     transform: scale(1.2);
 }
 .header__logo {
@@ -274,9 +270,6 @@ h1 {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
 }
-/* .menu-footer--none {
-    display: none;
-} */
 .menu-footer{
     display: block;
     padding-bottom: 32px;
@@ -312,10 +305,22 @@ h1 {
     background-position: center;
 }
 .email {
+    display: block;
+    text-decoration: none;
+    color: rgba(27, 28, 33, 1);
     margin: 16px 0 12px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.2px;
 }
 .phone-number {
     font-weight: 700;
+    display: block;
+    text-decoration: none;
+    color: rgba(27, 28, 33, 1);
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.6px;
 }
 .languages {
     list-style: none;
@@ -532,9 +537,10 @@ p {
     background-color: rgba(248, 248, 248, 1);
     border: none;
 }
-    .header-top--open {
-        padding: 23px 24px 0;
-    }
+.header-top--open {
+    padding: 23px 24px 0;
+    background-color: rgba(255, 255, 255, 1);
+}
 .burger {
     display: none;
 }

@@ -4,21 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <title>Услуги и сервисы</title>
 </head>
 <body>
     <div class="wrapper">
-        <header class="header header--open">
-            <div class="header-top header-top--open">
-                    <a href="#" class="burger burger--open">
-                        <span class="burger__line burger--open__line"></span>
-                        <span class="burger__line burger--open__line"></span>
-                        <span class="burger__line burger--open__line"></span>
+        <header class="header">
+            <div class="header-top">
+                    <a href="#" class="burger">
+                        <span class="burger__line"></span>
+                        <span class="burger__line"></span>
+                        <span class="burger__line"></span>
                     </a>
-                    <span class="header-top__burger-line header-top--open__burger-line line"></span>
+                    <a href="#" id="burger--open" class="burger burger--none">
+                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.82937 0.292761C1.43884 -0.0977629 0.805678 -0.0977632 0.415154 0.292761L0.293005 0.41491C-0.0975189 0.805434 -0.0975181 1.4386 0.293006 1.82912L6.49953 8.03564L0.293006 14.2422C-0.097518 14.6327 -0.0975189 15.2659 0.293005 15.6564L0.415154 15.7785C0.805678 16.1691 1.43884 16.1691 1.82937 15.7785L8.03589 9.57201L14.2424 15.7785C14.6329 16.1691 15.2661 16.1691 15.6566 15.7785L15.7788 15.6564C16.1693 15.2659 16.1693 14.6327 15.7788 14.2422L9.57225 8.03564L15.7788 1.82912C16.1693 1.4386 16.1693 0.805434 15.7788 0.41491L15.6566 0.292761C15.2661 -0.0977632 14.6329 -0.0977629 14.2424 0.292761L8.03589 6.49928L1.82937 0.292761Z" fill="white"/>
+</svg>
+                    </a>
+                    <span class="header-top__burger-line line"></span>
                     <div class="header__logo logo">
-                        <a href="">
+                        <a href="#">
                             <svg width="98" height="52" viewBox="0 0 98 52" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M36.0942 0.25C35.542 0.25 35.0942 0.697715 35.0942 1.25V5.52495C35.0942 6.07724 35.542 6.52495 36.0942 6.52495H72.4212C82.5482 6.52495 90.5016 14.3216 90.5016 24.4144C90.5016 24.7 90.7331 24.9315 91.0187 24.9315H96.2809C96.5664 24.9315 96.7979 24.7 96.7979 24.4144C96.7979 10.9252 85.9559 0.25 72.4212 0.25H36.0942Z" fill="#6B7B84" stroke="#80949F" stroke-width="0.5"/>
     <path fill-rule="evenodd" clip-rule="evenodd" d="M6.63075 25.3697C6.63075 25.1276 6.43452 24.9314 6.19246 24.9314H0.68829C0.446229 24.9314 0.25 25.1276 0.25 25.3697C0.25 39.0191 10.4732 50.2885 23.6927 51.0261L66.0343 51.0638C66.5869 51.0643 67.0352 50.6165 67.0352 50.0638V45.4842C67.0352 44.9319 66.5875 44.4842 66.0352 44.4842H25.1505C14.9142 44.4559 6.63075 35.9405 6.63075 25.3697Z" fill="#6B7B84" stroke="#80949F" stroke-width="0.5"/>
@@ -31,26 +38,26 @@
     </svg>
                         </a>
                     </div>
-                    <a href="#" class="header-top__call header-top--open__call btn"></a>
-                    <a href="#" class="header-top__message header-top--open__message btn"></a>
-                    <a href="#" class="header-top__person header-top--open__person btn"></a>
-                    <span class="header-top__line header-top--open__line line"></span>
-                    <a href="#" class="header-top__settings">
+                    <a href="#" class="header-top__call btn"></a>
+                    <a href="#" class="header-top__message btn"></a>
+                    <a href="#" class="header-top__person btn"></a>
+                    <span class="header-top__line line"></span>
+                    <a href="#" class="header-top__settings header-top__settings--none">
                         <span class="header-top__settings-text btn-text">Оставить заявку</span>
-                        <span class="header-top__settings-btn header-top--open__settings-btn btn"></span>
+                        <span class="header-top__settings-btn btn"></span>
                     </a>
-                    <a href="#" class="header-top__search header-top--open__search">
+                    <a href="#" class="header-top__search">
                         <span class="header-top__search-text btn-text">Статус ремонта</span>
-                        <span class="header-top__search-btn header-top--open__search-btn btn"></span>
+                        <span class="header-top__search-btn btn"></span>
                     </a>
             </div>
-            <div class="header-main header-main--open">
-                <div class="container container--open">
-                    <div class="heading heading--none">
+            <div class="header-main">
+                <div class="container">
+                    <div class="heading">
                         <span class="heading__line"></span>
                         <h1 class="heading__title title">Услуги и сервисы</h1>
                     </div>
-                    <nav class="menu menu--none">
+                    <nav id="main-menu" class="menu">
                         <a href="#" class="menu__link menu__link--active">Ремонтируемые устройства</a>
                         <a href="#" class="menu__link">Дополнительные услуги</a>
                         <a href="#" class="menu__link">Цены на услуги</a>
@@ -60,7 +67,7 @@
                         <a href="#" class="menu__link">Отзывы</a>
                         <div class="right-blackout right-blackout--none"></div>
                     </nav>
-                    <nav class="menu menu--open">
+                    <nav id="burger-menu" class="menu menu--none">
                         <a href="#" class="menu--open__link menu--open__link--active">Ремонт техники</a>
                         <a href="#" class="menu--open__link">Услуги и сервисы</a>
                         <a href="#" class="menu--open__link">Корпоративным клиентам</a>
@@ -70,7 +77,7 @@
                         <a href="#" class="menu--open__link">Наши сервисные центры</a>
                         <a href="#" class="menu--open__link">Контакты</a>
                     </nav>
-                    <section class="menu-footer">
+                    <section id="menu-footer" class="menu--none">
                         <ul class="menu-btns">
                             <li class="menu-item">
                                 <a href="#" class="menu-item__call btn"></a>
@@ -82,15 +89,15 @@
                                 <a href="#" class="menu-item__person btn"></a>
                             </li>
                         </ul>
-                        <p class="email">mail@cps.com</p>
-                        <p class="phone-number">8 800 890 8900</p>
+                        <a href="mailto:mail@cps.com" class="email">mail@cps.com</a>
+                        <a href="tel:88008908900" class="phone-number">8 800 890 8900</a>
                         <ul class="languages">
                             <li class="lang"><a href="#" class="lang-link lang-link--active">RU</a></li>
                             <li class="lang"><a href="#" class="lang-link">EN</a></li>
                             <li class="lang"><a href="#" class="lang-link">CH</a></li>
                         </ul>
                     </section>
-                    <section class="info info--none">
+                    <section class="info">
                         <div class="wrap-text">
                             <p class="info__main-text text">Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.</p>
                             <p class="info__main-text--hidden text">Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера<span class="info__text--hidden">, что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.</span></p>
@@ -102,8 +109,153 @@
                     </section>
                 </div>
             </div>
-            </div>
         </header>
+        <main class="main">
+            <h2 class="main-heading">Ремонт техники различных брендов</h2>
+            <div class="swiper" data-mobile="false">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <a href="#" class="slide-brand">
+                                <img src="img/lenovo.svg" alt="lenovo">
+                            </a>
+                            <a href="#" class="arrow-right">
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.08569 5.58569L0.292799 1.7928C-0.097725 1.40227 -0.0977242 0.769111 0.2928 0.378587L0.378586 0.292801C0.76911 -0.0977237 1.40228 -0.0977241 1.7928 0.2928L6.37859 4.87859C6.76911 5.26911 6.76911 5.90228 6.37859 6.2928L1.7928 10.8786C1.40228 11.2691 0.769111 11.2691 0.378587 10.8786L0.292801 10.7928C-0.0977237 10.4023 -0.0977241 9.76911 0.2928 9.37859L4.08569 5.58569Z" fill="#FF3E79"/>
+</svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <a href="#" class="slide-brand">
+                                <img src="img/samsung.svg" alt="samsung">
+                            </a>
+                            <a href="#" class="arrow-right">
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.08569 5.58569L0.292799 1.7928C-0.097725 1.40227 -0.0977242 0.769111 0.2928 0.378587L0.378586 0.292801C0.76911 -0.0977237 1.40228 -0.0977241 1.7928 0.2928L6.37859 4.87859C6.76911 5.26911 6.76911 5.90228 6.37859 6.2928L1.7928 10.8786C1.40228 11.2691 0.769111 11.2691 0.378587 10.8786L0.292801 10.7928C-0.0977237 10.4023 -0.0977241 9.76911 0.2928 9.37859L4.08569 5.58569Z" fill="#FF3E79"/>
+</svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <a href="#" class="slide-brand">
+                                <img src="img/apple.svg" alt="apple">
+                            </a>
+                            <a href="#" class="arrow-right">
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.08569 5.58569L0.292799 1.7928C-0.097725 1.40227 -0.0977242 0.769111 0.2928 0.378587L0.378586 0.292801C0.76911 -0.0977237 1.40228 -0.0977241 1.7928 0.2928L6.37859 4.87859C6.76911 5.26911 6.76911 5.90228 6.37859 6.2928L1.7928 10.8786C1.40228 11.2691 0.769111 11.2691 0.378587 10.8786L0.292801 10.7928C-0.0977237 10.4023 -0.0977241 9.76911 0.2928 9.37859L4.08569 5.58569Z" fill="#FF3E79"/>
+</svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <a href="#" class="slide-brand">
+                                <img src="img/viewSonic.svg" alt="viewSonic">
+                            </a>
+                            <a href="#" class="arrow-right">
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.08569 5.58569L0.292799 1.7928C-0.097725 1.40227 -0.0977242 0.769111 0.2928 0.378587L0.378586 0.292801C0.76911 -0.0977237 1.40228 -0.0977241 1.7928 0.2928L6.37859 4.87859C6.76911 5.26911 6.76911 5.90228 6.37859 6.2928L1.7928 10.8786C1.40228 11.2691 0.769111 11.2691 0.378587 10.8786L0.292801 10.7928C-0.0977237 10.4023 -0.0977241 9.76911 0.2928 9.37859L4.08569 5.58569Z" fill="#FF3E79"/>
+</svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <a href="#" class="slide-brand">
+                                <img src="img/bosch.svg" alt="bosch">
+                            </a>
+                            <a href="#" class="arrow-right">
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.08569 5.58569L0.292799 1.7928C-0.097725 1.40227 -0.0977242 0.769111 0.2928 0.378587L0.378586 0.292801C0.76911 -0.0977237 1.40228 -0.0977241 1.7928 0.2928L6.37859 4.87859C6.76911 5.26911 6.76911 5.90228 6.37859 6.2928L1.7928 10.8786C1.40228 11.2691 0.769111 11.2691 0.378587 10.8786L0.292801 10.7928C-0.0977237 10.4023 -0.0977241 9.76911 0.2928 9.37859L4.08569 5.58569Z" fill="#FF3E79"/>
+</svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <a href="#" class="slide-brand">
+                                <img src="img/hp.svg" alt="hp">
+                            </a>
+                            <a href="#" class="arrow-right">
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.08569 5.58569L0.292799 1.7928C-0.097725 1.40227 -0.0977242 0.769111 0.2928 0.378587L0.378586 0.292801C0.76911 -0.0977237 1.40228 -0.0977241 1.7928 0.2928L6.37859 4.87859C6.76911 5.26911 6.76911 5.90228 6.37859 6.2928L1.7928 10.8786C1.40228 11.2691 0.769111 11.2691 0.378587 10.8786L0.292801 10.7928C-0.0977237 10.4023 -0.0977241 9.76911 0.2928 9.37859L4.08569 5.58569Z" fill="#FF3E79"/>
+</svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <a href="#" class="slide-brand">
+                                <img src="img/acer.svg" alt="acer">
+                            </a>
+                            <a href="#" class="arrow-right">
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.08569 5.58569L0.292799 1.7928C-0.097725 1.40227 -0.0977242 0.769111 0.2928 0.378587L0.378586 0.292801C0.76911 -0.0977237 1.40228 -0.0977241 1.7928 0.2928L6.37859 4.87859C6.76911 5.26911 6.76911 5.90228 6.37859 6.2928L1.7928 10.8786C1.40228 11.2691 0.769111 11.2691 0.378587 10.8786L0.292801 10.7928C-0.0977237 10.4023 -0.0977241 9.76911 0.2928 9.37859L4.08569 5.58569Z" fill="#FF3E79"/>
+</svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <a href="#" class="slide-brand">
+                                <img src="img/sony.svg" alt="sony">
+                            </a>
+                            <a href="#" class="arrow-right">
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.08569 5.58569L0.292799 1.7928C-0.097725 1.40227 -0.0977242 0.769111 0.2928 0.378587L0.378586 0.292801C0.76911 -0.0977237 1.40228 -0.0977241 1.7928 0.2928L6.37859 4.87859C6.76911 5.26911 6.76911 5.90228 6.37859 6.2928L1.7928 10.8786C1.40228 11.2691 0.769111 11.2691 0.378587 10.8786L0.292801 10.7928C-0.0977237 10.4023 -0.0977241 9.76911 0.2928 9.37859L4.08569 5.58569Z" fill="#FF3E79"/>
+</svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <a href="#" class="slide-brand">
+                                <img src="img/lenovo.svg" alt="lenovo">
+                            </a>
+                            <a href="#" class="arrow-right">
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.08569 5.58569L0.292799 1.7928C-0.097725 1.40227 -0.0977242 0.769111 0.2928 0.378587L0.378586 0.292801C0.76911 -0.0977237 1.40228 -0.0977241 1.7928 0.2928L6.37859 4.87859C6.76911 5.26911 6.76911 5.90228 6.37859 6.2928L1.7928 10.8786C1.40228 11.2691 0.769111 11.2691 0.378587 10.8786L0.292801 10.7928C-0.0977237 10.4023 -0.0977241 9.76911 0.2928 9.37859L4.08569 5.58569Z" fill="#FF3E79"/>
+</svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <a href="#" class="slide-brand">
+                                <img src="img/samsung.svg" alt="samsung">
+                            </a>
+                            <a href="#" class="arrow-right">
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.08569 5.58569L0.292799 1.7928C-0.097725 1.40227 -0.0977242 0.769111 0.2928 0.378587L0.378586 0.292801C0.76911 -0.0977237 1.40228 -0.0977241 1.7928 0.2928L6.37859 4.87859C6.76911 5.26911 6.76911 5.90228 6.37859 6.2928L1.7928 10.8786C1.40228 11.2691 0.769111 11.2691 0.378587 10.8786L0.292801 10.7928C-0.0977237 10.4023 -0.0977241 9.76911 0.2928 9.37859L4.08569 5.58569Z" fill="#FF3E79"/>
+</svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <a href="#" class="slide-brand">
+                                <img src="img/apple.svg" alt="apple">
+                            </a>
+                            <a href="#" class="arrow-right">
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.08569 5.58569L0.292799 1.7928C-0.097725 1.40227 -0.0977242 0.769111 0.2928 0.378587L0.378586 0.292801C0.76911 -0.0977237 1.40228 -0.0977241 1.7928 0.2928L6.37859 4.87859C6.76911 5.26911 6.76911 5.90228 6.37859 6.2928L1.7928 10.8786C1.40228 11.2691 0.769111 11.2691 0.378587 10.8786L0.292801 10.7928C-0.0977237 10.4023 -0.0977241 9.76911 0.2928 9.37859L4.08569 5.58569Z" fill="#FF3E79"/>
+</svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Пагинация -->
+                <div class="swiper-pagination"></div>
+            </div>
+            <a href="#" class="info__btn-read text all-btn">
+                <span class="info__arrows"></span><p class="text-all">Показать все</p>
+            </a>
+        </main>
+    </div>
     </div>
 </body>
+<script src="main.js"></script>
 </html>

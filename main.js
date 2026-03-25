@@ -157,13 +157,7 @@ function mobileSlider() {
             spaceBetween: 16,
             loop: true,
             loopAdditionalSlides: 5,
-            autoplay: {
-                delay: 0,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: false,
-                stopOnLastSlide: false,
-            },
-            speed: 6000,
+            speed: 100,
             freeMode: false,
             allowTouchMove: true,
             pagination: {
@@ -227,9 +221,9 @@ swiperButton.addEventListener('click', function (evt) {
     slider.classList.remove('swiper--open');
     swiperWrapper.classList.remove('swiper-wrapper--open');
 
-    if (window.innerWidth > 768 && window.innerWidth < 1120) {
-        swiperSlide7.classList.remove('swiper-slide--none');
-        swiperSlide8.classList.remove('swiper-slide--none');
+    if (window.innerWidth < 1120) {
+        swiperSlide7.classList.add('swiper-slide--none');
+        swiperSlide8.classList.add('swiper-slide--none');
         swiperSlide9.classList.add('swiper-slide--none');
         swiperSlide10.classList.add('swiper-slide--none');
         swiperSlide11.classList.add('swiper-slide--none');
@@ -249,6 +243,8 @@ swiperButton.addEventListener('click', function (evt) {
     swiperWrapper.classList.add('swiper-wrapper--open');
 
     if (window.innerWidth > 768 && window.innerWidth < 1120) {
+        swiperSlide7.classList.remove('swiper-slide--none');
+        swiperSlide8.classList.remove('swiper-slide--none');
         swiperSlide9.classList.remove('swiper-slide--none');
         swiperSlide10.classList.remove('swiper-slide--none');
         swiperSlide11.classList.remove('swiper-slide--none');

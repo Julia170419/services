@@ -1,7 +1,17 @@
+// import './styles/style.css'
+// import './styles/style.scss'
+import './styles/header.scss'
+import './styles/main.scss'
+import './styles/footer.scss'
+import './styles/media.scss'
+
+let burgerAside = document.querySelector('.burger-aside');
 let burger = document.querySelector('.burger');
 let burgerOpen = document.querySelector('#burger--open');
+let burgerOverlay = document.querySelector('.burger-overlay');
 
-let header = document.querySelector('.header');
+let header = document.querySelector('.header-burger');
+let headerBurgerOpen = document.querySelector('.header-burger--open');
 let headerTop = document.querySelector('.header-top');
 
 let burgerLine = headerTop.querySelector('.header-top__burger-line');
@@ -30,80 +40,27 @@ let main = document.querySelector('.main');
 
 burger.addEventListener('click', function (evt) {
     evt.preventDefault();
-    burger.classList.add('burger--none');
-    burgerOpen.classList.add('burger--open');
-    burgerOpen.classList.remove('burger--none');
-
-    header.classList.add('header--open');
-    headerTop.classList.add('header-top--open');
-
-    if (window.innerWidth >= 769) {
-        burgerLine.classList.add('header-top--open__burger-line');
-    };
-    
-    headerTopLine.classList.add('header-top--open__line');
-
-    headerTopCall.classList.add('header-top--open__call');
-    headerTopMessage.classList.add('header-top--open__message');
-    headerTopPerson.classList.add('header-top--open__person');
-    headerTopSettingsBtn.classList.add('header-top--open__settings-btn');
-    headerTopSearchBtn.classList.add('header-top--open__search-btn');
-    headerTopSearch.classList.add('header-top--open__search');
-
-    headerMain.classList.add('header-main--open');
-    container.classList.add('container--open');
-    
-    heading.classList.add('heading--none');
-
-    mainMenu.classList.add('menu--none');
-    burgerMenu.classList.add('menu--open');
-    
-    menuFooter.classList.add('menu-footer');
-
-    info.classList.add('info--none');
-
-    main.classList.add('info--none');
+    burgerAside.classList.remove('burger-aside--none');
+    burgerOverlay.classList.add('burger-overlay--open');
 });
 
 burgerOpen.addEventListener('click', function (evt) {
     evt.preventDefault();
-    burger.classList.remove('burger--none');
-    burgerOpen.classList.remove('burger--open');
-    burgerOpen.classList.add('burger--none');
-
-    header.classList.remove('header--open');
-    headerTop.classList.remove('header-top--open');
-
-    if (window.innerWidth >= 769) {
-        burgerLine.classList.remove('header-top--open__burger-line');
-    };
-
-    headerTopLine.classList.remove('header-top--open__line');
-    
-    headerTopCall.classList.remove('header-top--open__call');
-    headerTopMessage.classList.remove('header-top--open__message');
-    headerTopPerson.classList.remove('header-top--open__person');
-    headerTopSettingsBtn.classList.remove('header-top--open__settings-btn');
-    headerTopSearchBtn.classList.remove('header-top--open__search-btn');
-    headerTopSearch.classList.remove('header-top--open__search');
-
-    headerMain.classList.remove('header-main--open');
-    container.classList.remove('container--open');
-
-    heading.classList.remove('heading--none');
-
-    mainMenu.classList.remove('menu--none');
-    burgerMenu.classList.remove('menu--open');
-    burgerMenu.classList.add('menu--none');
-
-    menuFooter.classList.remove('menu-footer');
-    menuFooter.classList.add('menu--none');
-
-    info.classList.remove('info--none');
-
-    main.classList.remove('info--none');
+    burgerAside.classList.add('burger-aside--none');
+    burgerOverlay.classList.remove('burger-overlay--open');
 });
 
+burgerOverlay.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    burgerAside.classList.add('burger-aside--none');
+    burgerOverlay.classList.remove('burger-overlay--open');
+});
+
+document.addEventListener('keydown', function (evt) {
+    evt.preventDefault();
+    burgerAside.classList.add('burger-aside--none');
+    burgerOverlay.classList.remove('burger-overlay--open');
+});
 
 const mediaQuery1120 = window.matchMedia('(min-width: 1120px)');
 let logo = document.querySelector('.logo');
@@ -116,7 +73,7 @@ function updateDesktopClasses() {
     
     if (isDesktop) {
         if (isMenuOpen) {
-            logo.classList.add('header--open__logo');
+            // logo.classList.add('header--open__logo');
             headerTopSearchText.classList.add('header-top--open__search-text');
             headerTopSettings.classList.add('header-top__settings--none');
         } else {
@@ -143,6 +100,58 @@ menuLinks.forEach(link => {
         
         this.classList.add('menu__link--active');
     });
+});
+
+//burger active-links
+const menuOpenLinks = document.querySelectorAll('.menu--open__link');
+
+menuOpenLinks.forEach(link => {
+    link.addEventListener('click', function(evt) {
+        evt.preventDefault();
+
+        menuOpenLinks.forEach(item => {
+            item.classList.remove('menu--open__link--active');
+        });
+
+        this.classList.add('menu--open__link--active');
+    });
+});
+
+//burger active-langs
+const menuOpenlang = document.querySelectorAll('.lang-link');
+
+menuOpenlang.forEach(link => {
+    link.addEventListener('click', function(evt) {
+        evt.preventDefault();
+
+        menuOpenlang.forEach(item => {
+            item.classList.remove('lang-link--active');
+        });
+
+        this.classList.add('lang-link--active');
+    });
+});
+
+// button read more
+let infoBtn = document.querySelector('.info__btn-read');
+let closeText = document.querySelector('.info__main-text--close');
+let arrows = infoBtn.querySelector('.info__arrows');
+let infoReadMore = document.querySelector('.info__read-more');
+
+infoBtn.addEventListener('click', function() {
+    if (arrows.classList.contains('info__arrows--open')) {
+        closeText.classList.add('info__main-text--close');
+
+    arrows.classList.remove('info__arrows--open');
+
+    infoReadMore.textContent = 'Читать далее';
+    } else {
+        closeText.classList.remove('info__main-text--close');
+
+    arrows.classList.add('info__arrows--open');
+
+    infoReadMore.textContent = 'Скрыть';
+    }
 });
 
 // swiper
@@ -255,3 +264,148 @@ swiperButton.addEventListener('click', function (evt) {
     }
     };
 });
+
+//swiperRepair
+
+let repairSlide4 = document.querySelector('.swiper-slide-repair:nth-child(4)');
+let repairSlide5 = document.querySelector('.swiper-slide-repair:nth-child(5)');
+let repairSlide6 = document.querySelector('.swiper-slide-repair:nth-child(6)');
+let repairSlide7 = document.querySelector('.swiper-slide-repair:nth-child(7)');
+let repairSlide8 = document.querySelector('.swiper-slide-repair:nth-child(8)');
+let repairSlide9 = document.querySelector('.swiper-slide-repair:nth-child(9)');
+
+let repairButton = document.querySelector('.repair__btn-more');
+let infoArrowsRepair = repairButton.querySelector('.info__arrows-repair');
+let btnTextRepair = repairButton.querySelector('.text-all-repair');
+let swiperRepairWrapper = document.querySelector('.swiper-repair-wrapper');
+let swiperRepair = document.querySelector('.swiper-repair');
+
+repairButton.addEventListener('click', function (evt) {
+    evt.preventDefault();
+
+    if (infoArrowsRepair.classList.contains('info__arrows--open')) {
+        repairButton.classList.remove('all-btn--open');
+
+        infoArrowsRepair.classList.remove('info__arrows--open');
+
+    btnTextRepair.textContent = 'Показать все';
+
+    swiperRepair.classList.remove('swiper-repair--open');
+    swiperRepairWrapper.classList.remove('swiper-wrapper--open');
+
+    if (window.innerWidth < 1120) {
+        repairSlide4.classList.add('swiper-slide--none');
+        repairSlide5.classList.add('swiper-slide--none');
+        repairSlide6.classList.add('swiper-slide--none');
+        repairSlide7.classList.add('swiper-slide--none');
+        repairSlide8.classList.add('swiper-slide--none');
+        repairSlide9.classList.add('swiper-slide--none');
+    } else {
+        repairSlide5.classList.add('swiper-slide--none');
+        repairSlide6.classList.add('swiper-slide--none');
+        repairSlide7.style.display = 'none';
+        repairSlide8.style.display = 'none';
+        // repairSlide7.classList.add('swiper-slide--none');
+        // repairSlide8.classList.add('swiper-slide--none');
+        repairSlide9.classList.add('swiper-slide--none');
+    };
+    } else {
+    repairButton.classList.add('all-btn--open');
+
+    infoArrowsRepair.classList.add('info__arrows--open');
+
+    btnTextRepair.textContent = 'Скрыть';
+
+    swiperRepair.classList.add('swiper-repair--open');
+    swiperRepairWrapper.classList.add('swiper-wrapper--open');
+
+    if (window.innerWidth > 768 && window.innerWidth < 1120) {
+        repairSlide4.classList.remove('swiper-slide--none');
+        repairSlide5.classList.remove('swiper-slide--none');
+        repairSlide6.classList.remove('swiper-slide--none');
+        repairSlide7.classList.remove('swiper-slide--none');
+        repairSlide8.classList.remove('swiper-slide--none');
+        repairSlide9.classList.remove('swiper-slide--none');
+    } else {
+        repairSlide5.classList.remove('swiper-slide--none');
+        repairSlide6.classList.remove('swiper-slide--none');
+        repairSlide7.style.display = 'flex';
+        repairSlide8.style.display = 'flex';
+        // repairSlide7.classList.remove('swiper-slide--none');
+        // repairSlide8.classList.remove('swiper-slide--none');
+        repairSlide9.classList.remove('swiper-slide--none');
+    }
+    };
+});
+
+
+// feedback
+let messageBtn = document.querySelector('.menu-item__message');
+let messageHeadBtn = document.querySelector('#header-top__message');
+let feedbackMessage = document.querySelector('.feedback-message');
+let feedbackMesClose = feedbackMessage.querySelector('.feedback__close');
+
+feedbackMesClose.addEventListener('click', function(evt) {
+    evt.preventDefault;
+    feedbackMessage.classList.remove('feeadback--open');
+    burgerOverlay.classList.remove('burger-overlay--open');
+    burgerOverlay.style.zIndex = '10';
+    if (window.innerWidth >= 1120) {
+        burgerOverlay.style.display = 'none';
+    };
+})
+
+messageBtn.addEventListener('click', function(evt) {
+    evt.preventDefault;
+    feedbackMessage.classList.add('feeadback--open');
+    burgerOverlay.classList.add('burger-overlay--open');
+    burgerOverlay.style.zIndex = '25';
+    if (window.innerWidth >= 1120) {
+        burgerOverlay.style.display = 'block';
+    };
+})
+
+messageHeadBtn.addEventListener('click', function(evt) {
+    evt.preventDefault;
+    feedbackMessage.classList.add('feeadback--open');
+    burgerOverlay.classList.add('burger-overlay--open');
+    burgerOverlay.style.zIndex = '25';
+    if (window.innerWidth >= 1120) {
+        burgerOverlay.style.display = 'block';
+    };
+})
+
+let callBtn = document.querySelector('#header-top__call')
+let callHeadBtn = document.querySelector('.menu-item__call')
+let feedbackCall = document.querySelector('.feedback-call')
+let feedbackCallClose = feedbackCall.querySelector('.feedback__close');
+
+feedbackCallClose.addEventListener('click', function(evt) {
+    evt.preventDefault;
+    feedbackCall.classList.remove('feeadback--open');
+    burgerOverlay.classList.remove('burger-overlay--open');
+    burgerOverlay.style.zIndex = '10';
+    if (window.innerWidth >= 1120) {
+        burgerOverlay.style.display = 'none';
+    };
+})
+
+callBtn.addEventListener('click', function(evt) {
+    evt.preventDefault;
+    feedbackCall.classList.add('feeadback--open');
+    burgerOverlay.classList.add('burger-overlay--open');
+    burgerOverlay.style.zIndex = '25';
+    if (window.innerWidth >= 1120) {
+        burgerOverlay.style.display = 'block';
+    };
+})
+
+callHeadBtn.addEventListener('click', function(evt) {
+    evt.preventDefault;
+    feedbackCall.classList.add('feeadback--open');
+    burgerOverlay.classList.add('burger-overlay--open');
+    burgerOverlay.style.zIndex = '25';
+    if (window.innerWidth >= 1120) {
+        burgerOverlay.style.display = 'block';
+    };
+})
